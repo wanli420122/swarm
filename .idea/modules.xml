@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/infowork-admin/infowork-api.iml" filepath="$PROJECT_DIR$/infowork-admin/infowork-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infowork-common/infowork-common.iml" filepath="$PROJECT_DIR$/infowork-common/infowork-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infowork-gateway/infowork-gateway.iml" filepath="$PROJECT_DIR$/infowork-gateway/infowork-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infowork-mbg/infowork-mbg.iml" filepath="$PROJECT_DIR$/infowork-mbg/infowork-mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infowork-oauth2/infowork-oauth2.iml" filepath="$PROJECT_DIR$/infowork-oauth2/infowork-oauth2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infowork-swarm.iml" filepath="$PROJECT_DIR$/infowork-swarm.iml" />
+    </modules>
+  </component>
+</project>

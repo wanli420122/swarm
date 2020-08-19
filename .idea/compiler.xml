@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="infowork-common" />
+        <module name="infowork-gateway" />
+        <module name="infowork-commmon" />
+        <module name="infowork-mbg" />
+        <module name="infowork-oauth2" />
+        <module name="infowork-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="infowork-api" target="1.8" />
+      <module name="infowork-commmon" target="1.8" />
+      <module name="infowork-common" target="1.8" />
+      <module name="infowork-gateway" target="1.8" />
+      <module name="infowork-mbg" target="1.8" />
+      <module name="infowork-oauth2" target="1.8" />
+      <module name="infowork-swarm" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="infowork-api" options="-parameters" />
+      <module name="infowork-commmon" options="-parameters" />
+      <module name="infowork-common" options="-parameters" />
+      <module name="infowork-gateway" options="-parameters" />
+      <module name="infowork-mbg" options="-parameters" />
+      <module name="infowork-oauth2" options="-parameters" />
+    </option>
+  </component>
+</project>
