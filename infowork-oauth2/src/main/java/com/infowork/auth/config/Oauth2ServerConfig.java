@@ -60,7 +60,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         endpoints.authenticationManager(authenticationManager)
                 .userDetailsService(userDetailsService) //配置加载用户信息的服务
                 .accessTokenConverter(accessTokenConverter())
-                .tokenEnhancer(enhancerChain);//配置令牌存储策略
+                .tokenEnhancer(enhancerChain);//配置令牌存储策略(JWT存储策略)
     }
 
     @Override

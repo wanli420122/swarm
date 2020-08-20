@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 /**
- *
+ * 用户服务实现类，实现UserDetailService重写loaduser方法，查询用户名对应用户信息
  * Create by wl on 2020/8/12
  */
 @Service

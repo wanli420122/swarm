@@ -1,7 +1,7 @@
 package com.infowork.gateway.component;
 
 import cn.hutool.json.JSONUtil;
-import com.infowork.gateway.api.CommonResult;
+import com.infowork.common.api.CommonResult;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import java.nio.charset.Charset;
 
 /**
  * 自定义返回结果：没有权限访问时
- * Created by macro on 2018/4/26.
+ * Created by wl on 2020/8/21.
  */
 @Component
 public class RestfulAccessDeniedHandler implements ServerAccessDeniedHandler {

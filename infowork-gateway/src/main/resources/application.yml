@@ -1,28 +1,21 @@
 server:
-  port: 9201
+  port: 8201
 spring:
-  profiles:
-    active: dev
-  application:
-    name: infowork-gateway
   cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
     gateway:
-      routes: #配置路由路径
-        - id: infowork-api-route
-          uri: lb://infowork-api
+      routes: #配置路由路径 lb开始负载均衡
+        - id: infowork-admin #infowork业务处理服务
+          uri: lb://infowork-admin
           predicates:
-            - Path=/api/**
+            - Path=/infowork-admin/**
           filters:
             - StripPrefix=1
-        - id: infowork-auth-route
+        - id: infowork-oauth2 #认证服务
           uri: lb://infowork-oauth2
           predicates:
-            - Path=/auth/**
+            - Path=/infowork-oauth2/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=1 #url前缀截断 如截断前url为/infowork-oauth2/** 截断后 /**
       discovery:
         locator:
           enabled: true #开启从注册中心动态创建路由的功能
@@ -31,7 +24,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: 'http://localhost:9401/rsa/publicKey' #配置RSA的公钥访问地址
+          jwk-set-uri: 'http://localhost:8201/rsa/publicKey' #配置RSA的公钥访问地址
   redis:
     database: 0
     port: 6379
@@ -43,3 +36,13 @@ secure:
       - "/actuator/**"
       - "/auth/oauth/token"
       - "/oauth/**"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/**/v2/api-docs"
+management: #开始Spring boot Admin 监控
+  endpoint:
+    web:
+      exposure:
+        include: '*'
+    health:
+      show-details: always
