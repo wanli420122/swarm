@@ -42,14 +42,14 @@ public class AuthController {
             @ApiImplicitParam(name = "username", value = "登录用户名"),
             @ApiImplicitParam(name = "password", value = "登录密码")
     })
-    @PostMapping("/oauth")
+    @PostMapping("/token")
     public CommonResult<Oauth2TokenDto> postAccessToken(@ApiIgnore Principal principal,@ApiIgnore @RequestParam Map<String,String> parameters)
             throws HttpRequestMethodNotSupportedException {
-        OAuth2AccessToken oAuth2AccessToken= (OAuth2AccessToken) tokenEndpoint.postAccessToken(principal,parameters);
+        OAuth2AccessToken oAuth2AccessToken=tokenEndpoint.postAccessToken(principal,parameters).getBody();
         Oauth2TokenDto oauth2TokenDto=Oauth2TokenDto.builder()
                 .token(oAuth2AccessToken.getValue())
                 .refreshToken(oAuth2AccessToken.getRefreshToken().getValue())
-                .tokenHead(AuthConstant.JWT_TOKEN_HEADER)
+                .tokenHead(AuthConstant.JWT_TOKEN_PREFIX)
                 .expireIn(oAuth2AccessToken.getExpiresIn()).build();
         return CommonResult.success(oauth2TokenDto);
     }

@@ -7,7 +7,7 @@ management:
         include: "*"
 feign:
   okhttp:
-    enable: true
+    enabled: true
 ribbon:
-  ConnectionTimeout: 3000 #服务器请求连接超时时间
-  ReadTimeout: 3000  #服务请求处理超时时间
+  ConnectTimeout: 3000 #服务请求连接超时时间（毫秒）
+  ReadTimeout: 3000 #服务请求处理超时时间（毫秒）

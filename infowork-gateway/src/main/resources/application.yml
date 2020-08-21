@@ -24,7 +24,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: 'http://localhost:8201/rsa/publicKey' #配置RSA的公钥访问地址
+          jwk-set-uri: 'http://localhost:8201/infowork-oauth2/rsa/publicKey' #配置RSA的公钥访问地址
   redis:
     database: 0
     port: 6379
@@ -33,12 +33,19 @@ spring:
 secure:
   ignore:
     urls: #配置白名单路径
-      - "/actuator/**"
-      - "/auth/oauth/token"
-      - "/oauth/**"
+      - "/doc.html"
       - "/swagger-resources/**"
       - "/swagger/**"
+      - "/**/*.js"
+      - "/**/*.css"
+      - "/**/*.png"
+      - "/**/*.ico"
       - "/**/v2/api-docs"
+      - "/webjars/springfox-swagger-ui/**"
+      - "/actuator/**"
+      - "/infowork-oauth2/oauth/token"
+      - "/infowork-oauth2/rsa/publicKey"
+      -
 management: #开始Spring boot Admin 监控
   endpoint:
     web:

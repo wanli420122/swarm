@@ -21,8 +21,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
-                .antMatchers("/rsa/publicKey").permitAll()
-                .antMatchers("/v2/api-docs").permitAll()
+                .antMatchers("/rsa/publicKey").permitAll()//用户公钥地址放行
+                .antMatchers("/v2/api-docs").permitAll()//swagger路由url放行
                 .anyRequest().authenticated();
     }
 

@@ -2,6 +2,7 @@ package com.infowork.auth.config;
 
 import com.infowork.auth.component.JwtTokenEnhancer;
 import com.infowork.auth.service.impl.UserServiceImpl;
+import com.infowork.common.constant.AuthConstant;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,7 +41,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         // 这里配置数据在内存当中
         clients.inMemory()
-                .withClient("client-app")//配置client_id
+                .withClient(AuthConstant.ADMIN_CLIENT_ID)//配置client_id
                 .secret(passwordEncoder.encode("123456"))//配置client_secret
                 //.redirectUris("http://www.baidu.com")
                 .scopes("all")//配置申请的权限范围

@@ -11,7 +11,7 @@
 
     <groupId>com.infowork.oauth2</groupId>
     <artifactId>infowork-oauth2</artifactId>
-
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.infowork-common</groupId>
@@ -22,6 +22,10 @@
                     <artifactId>spring-boot-starter-data-redis</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
