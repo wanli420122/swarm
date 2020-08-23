@@ -32,7 +32,7 @@ spring:
     password:
 secure:
   ignore:
-    urls: #配置白名单路径
+    urls:   #配置白名单路径
       - "/doc.html"
       - "/swagger-resources/**"
       - "/swagger/**"
@@ -45,7 +45,6 @@ secure:
       - "/actuator/**"
       - "/infowork-oauth2/oauth/token"
       - "/infowork-oauth2/rsa/publicKey"
-      -
 management: #开始Spring boot Admin 监控
   endpoint:
     web:
